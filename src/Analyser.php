@@ -290,7 +290,7 @@ class Analyser
         $className         = null;
         $functionName      = null;
         $testClass         = false;
-        $currentClassData  = null;
+        $currentClassData  = ['ccn' => 0];
         $currentMethodData = null;
 
         for ($i = 0; $i < $numTokens; $i++) {
@@ -347,7 +347,7 @@ class Analyser
                             $testClass         = false;
                             $this->classCcn[]  = $currentClassData['ccn'];
                             $this->classLloc[] = $currentClassData['lloc'];
-                            $currentClassData  = null;
+                            $currentClassData  = ['ccn' => 0];
                         }
                     }
                 }
